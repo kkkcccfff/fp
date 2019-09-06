@@ -6,12 +6,20 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import {reqAddress} from '@/api';
+import HelloWorld from './components/HelloWorld.vue';
 
 export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+   mounted(){
+      this.$api.login.getUserInfo(['FT0001','','']).then((res)=>{
+          console.log(res);
+      })
+    
   }
 }
 </script>
